@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5185418d0c32ca84bbf48db22ac47169, type: 3}
   m_Name: Wheat
   m_EditorClassIdentifier: Assembly-CSharp::Plant
+  itemName: Wheat
+  itemSprite: {fileID: -2391123977803150887, guid: 1c3b4a6b8a2bfd5468e13994624bb43c, type: 3}
+  isStackable: 1
+  maxStack: 24
   plantGrows:
   - plantSprite: {fileID: -2206655580924712108, guid: 1c3b4a6b8a2bfd5468e13994624bb43c, type: 3}
     growTime: 10

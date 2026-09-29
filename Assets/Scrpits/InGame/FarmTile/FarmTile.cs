@@ -41,9 +41,11 @@ public class FarmTile : MonoBehaviour, IA_Click
     {
         Debug.Log("Tıklandı");
         
-        if(plantProcessCoroutine != null) return;
+        if(plantProcessCoroutine != null || currentPlant == null) return;
 
         Debug.Log("Bitki hasat edildi");
+
+        InventoryManager.Instance.AddItem(currentPlant, 1);
         currentPlant = null;
         plantIndex = 0;
         plantHandler.sprite = null;

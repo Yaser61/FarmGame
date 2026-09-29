@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5185418d0c32ca84bbf48db22ac47169, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: Assembly-CSharp::Plant
+  itemName: Carrot
+  itemSprite: {fileID: 4379626984075295356, guid: 1c3b4a6b8a2bfd5468e13994624bb43c, type: 3}
+  isStackable: 1
+  maxStack: 16
   plantGrows:
   - plantSprite: {fileID: -2007879195102778466, guid: 1c3b4a6b8a2bfd5468e13994624bb43c, type: 3}
     growTime: 5
