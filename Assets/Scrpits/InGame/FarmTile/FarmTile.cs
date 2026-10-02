@@ -6,6 +6,12 @@ public class FarmTile : MonoBehaviour, IA_Click
     [SerializeField] private SpriteRenderer plantHandler;
     [SerializeField] private Plant currentPlant;
     private int plantIndex = 0;
+    private Material defaultMaterial;
+
+    void Awake()
+    {
+        defaultMaterial = plantHandler.material;
+    }
 
     private void Start()
     {
@@ -29,11 +35,13 @@ public class FarmTile : MonoBehaviour, IA_Click
         while (plantIndex < currentPlant.plantGrows.Count)
         {
             plantHandler.sprite = currentPlant.plantGrows[plantIndex].plantSprite;
-            yield return new WaitForSeconds(currentPlant.plantGrows[plantIndex].growTime);
+            float growTime = Random.Range(currentPlant.plantGrows[plantIndex].minGrowTime, currentPlant.plantGrows[plantIndex].maxGrowTime);
+            yield return new WaitForSeconds(growTime);
             plantIndex++;
         }
 
         Debug.Log("Bitki olgunlaştı");
+        plantHandler.material = currentPlant.itemShineMaterial;
         plantProcessCoroutine = null;
 
     }
@@ -45,6 +53,7 @@ public class FarmTile : MonoBehaviour, IA_Click
 
         Debug.Log("Bitki hasat edildi");
 
+        plantHandler.material = defaultMaterial;
         InventoryManager.Instance.AddItem(currentPlant, 1);
         currentPlant = null;
         plantIndex = 0;

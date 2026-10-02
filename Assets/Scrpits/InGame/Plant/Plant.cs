@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "DefaultPlant", menuName = "Scriptable Objects/Plants")]
+[CreateAssetMenu(fileName = "new_Plant", menuName = "Scriptable Objects/Item/Plants")]
 public class Plant : Item
 {
     public List<PlantGrow> plantGrows = new();
@@ -11,5 +11,6 @@ public class Plant : Item
 public class PlantGrow
 {
     public Sprite plantSprite;
-    public float growTime = 1f;
+    public float minGrowTime = 1f;
+    public float maxGrowTime = 2f;
 }
