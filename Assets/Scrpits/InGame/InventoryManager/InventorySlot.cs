@@ -6,7 +6,9 @@ public class InventorySlot : MonoBehaviour
 {
     [SerializeField] private Image slotItemImage;
     [SerializeField] private TextMeshProUGUI itemCountText;
-    [SerializeField] public Item currentItem;
+    public Image slotSelectedImage;
+    public Item currentItem;
+    [SerializeField] private Button selectedButon;
     public int itemCount;
     public bool isMaxStacked;
 
@@ -22,6 +24,11 @@ public class InventorySlot : MonoBehaviour
             slotItemImage.sprite = null;
             itemCountText.text = "";
         }
+        selectedButon.onClick.AddListener(() =>
+        {
+            InventoryManager.Instance.SelectSlot(this);
+            slotSelectedImage.gameObject.SetActive(this);
+        });
     }
 
     public void SetItem(Item newItem, int newCount)

@@ -16,12 +16,17 @@ MonoBehaviour:
   itemSprite: {fileID: 4379626984075295356, guid: 1c3b4a6b8a2bfd5468e13994624bb43c, type: 3}
   isStackable: 1
   maxStack: 16
+  itemShineMaterial: {fileID: 2100000, guid: a173aad8c24132d4b86b03c419f391af, type: 2}
   plantGrows:
   - plantSprite: {fileID: -2007879195102778466, guid: 1c3b4a6b8a2bfd5468e13994624bb43c, type: 3}
-    growTime: 5
+    minGrowTime: 5
+    maxGrowTime: 7
   - plantSprite: {fileID: -4964467975926673830, guid: 1c3b4a6b8a2bfd5468e13994624bb43c, type: 3}
-    growTime: 4
+    minGrowTime: 4
+    maxGrowTime: 7
   - plantSprite: {fileID: 6306059771652365211, guid: 1c3b4a6b8a2bfd5468e13994624bb43c, type: 3}
-    growTime: 3
+    minGrowTime: 3
+    maxGrowTime: 5
   - plantSprite: {fileID: 7284285715301073151, guid: 1c3b4a6b8a2bfd5468e13994624bb43c, type: 3}
-    growTime: 2
+    minGrowTime: 2
+    maxGrowTime: 4

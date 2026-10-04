@@ -918,9 +918,8 @@ MonoBehaviour:
   - {fileID: 1415464049}
   - {fileID: 1061083330}
   testItems:
-  - {fileID: 11400000, guid: 6b65c6be5dce2c346b95e1af34c72ecf, type: 2}
-  - {fileID: 11400000, guid: 21d191f30e3eeb24b92825d2ae931c16, type: 2}
-  - {fileID: 11400000, guid: 2a0cf6f338501fc448baad0ed36faf11, type: 2}
+  - {fileID: 11400000, guid: c1d3ac54b9f612b41a9e2550b0fb5570, type: 2}
+  selectedSlot: {fileID: 0}
 --- !u!4 &574878142
 Transform:
   m_ObjectHideFlags: 0

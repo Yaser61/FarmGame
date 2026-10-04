@@ -21,13 +21,14 @@ public class FarmTile : MonoBehaviour, IA_Click
         }
     }
 
-    public void AddPlant(Plant plant)
+    public bool AddPlant(Plant plant)
     {
-        if (currentPlant != null) return;
+        if (currentPlant != null) return false;
 
         currentPlant = plant;
         plantIndex = 0;
         plantProcessCoroutine ??= StartCoroutine(PlantProcessing());
+        return true;
     }
     Coroutine plantProcessCoroutine;
     public IEnumerator PlantProcessing()

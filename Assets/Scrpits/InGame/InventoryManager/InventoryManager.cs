@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,6 +6,10 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private List<InventorySlot> inventorySlots = new();
     [SerializeField] private List<Item> testItems = new();
+
+    public InventorySlot selectedSlot;
+    public static event Action<InventorySlot> SelectSlotAction;
+    public static event Action<InventorySlot> DeSelectSlotAction;
     public static InventoryManager Instance;
 
     void Awake()
@@ -18,16 +23,56 @@ public class InventoryManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Start()
+    {
+        selectedSlot = inventorySlots[0];
+    }
+    void OnEnable()
+    {
+        Item.ItemUsedAction += RemoveFromCurrentSlot;
+    }
+    void OnDisable()
+    {
+        Item.ItemUsedAction -= RemoveFromCurrentSlot;
+    }
+    public void SelectSlot(InventorySlot slot)
+    {
+        //int slotIndex = FindSlot(slot);
+        if (selectedSlot)
+        {
+            selectedSlot.slotSelectedImage.gameObject.SetActive(false);
+            DeSelectSlotAction?.Invoke(selectedSlot);
+        }   
+        selectedSlot = slot;
+        SelectSlotAction?.Invoke(selectedSlot);
+    }
+    public void RemoveFromCurrentSlot(Item item, int amount)
+    {
+        if (selectedSlot.currentItem && selectedSlot?.currentItem == item)
+        {
+            selectedSlot.SetItemCount(-amount);
+        }
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            AddItem(testItems[Random.Range(0, testItems.Count)], 1);
+            AddItem(testItems[UnityEngine.Random.Range(0, testItems.Count)], 1);
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            RemoveItem(testItems[Random.Range(0, testItems.Count)], 1);
+            RemoveItem(testItems[UnityEngine.Random.Range(0, testItems.Count)], 1);
         }
+    }
+    public int FindSlot(InventorySlot slot)
+    {
+        int index = 0;
+        foreach (InventorySlot item in inventorySlots)
+        {
+            if (item == slot) return index;
+            index++;
+        }
+        return 0;
     }
 
     public void AddItem(Item item, int amount)
