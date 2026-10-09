@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,11 +9,13 @@ public class PlayerController : MonoBehaviour
     {
         InventoryManager.SelectSlotAction += SlotSelected;
         InventoryManager.DeSelectSlotAction += DeSlotSelected;
+        InventoryManager.FinishSlotAction += DeSlotSelected;
     }
     void OnDisable()
     {
         InventoryManager.SelectSlotAction -= SlotSelected;
         InventoryManager.DeSelectSlotAction -= DeSlotSelected;
+        InventoryManager.FinishSlotAction -= DeSlotSelected;
     }
     void Update()
     {
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
                 return;
             }
 
-            InventoryManager.Instance.selectedSlot.currentItem?.ItemUse(obj.gameObject);
+            InventoryManager.Instance.selectedSlot?.currentItem?.ItemUse(obj.gameObject);
 
             if (obj.TryGetComponent(out IA_Click click))
             {

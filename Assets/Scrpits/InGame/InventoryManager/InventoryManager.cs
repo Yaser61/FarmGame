@@ -9,6 +9,7 @@ public class InventoryManager : MonoBehaviour
 
     public InventorySlot selectedSlot;
     public static event Action<InventorySlot> SelectSlotAction;
+    public static event Action<InventorySlot> FinishSlotAction;
     public static event Action<InventorySlot> DeSelectSlotAction;
     public static InventoryManager Instance;
 
@@ -51,6 +52,7 @@ public class InventoryManager : MonoBehaviour
         if (selectedSlot.currentItem && selectedSlot?.currentItem == item)
         {
             selectedSlot.SetItemCount(-amount);
+            if(selectedSlot.currentItem == null) FinishSlotAction?.Invoke(selectedSlot);
         }
     }
     private void Update()
