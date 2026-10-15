@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd49fa86129be7489bbfde888ae49c5, type: 3}
+  m_Name: Wheat_Seed
+  m_EditorClassIdentifier: Assembly-CSharp::Seed
+  itemName: Item
+  itemSprite: {fileID: -5393398564529373947, guid: 1c3b4a6b8a2bfd5468e13994624bb43c, type: 3}
+  isStackable: 1
+  maxStack: 16
+  itemShineMaterial: {fileID: 2100000, guid: a173aad8c24132d4b86b03c419f391af, type: 2}
+  itemPrice: 4
+  plant: {fileID: 11400000, guid: 21d191f30e3eeb24b92825d2ae931c16, type: 2}

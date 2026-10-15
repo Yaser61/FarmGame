@@ -9,6 +9,7 @@ public class Item : ScriptableObject
     public bool isStackable = false;
     public int maxStack = 16;
     public Material itemShineMaterial;
+    public int itemPrice = 1;
     public static event Action<Item, int> ItemUsedAction;
     public virtual void ItemUse(GameObject clickedObject)
     {

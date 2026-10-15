@@ -17,4 +17,5 @@ MonoBehaviour:
   isStackable: 0
   maxStack: 1
   itemShineMaterial: {fileID: 2100000, guid: a173aad8c24132d4b86b03c419f391af, type: 2}
+  itemPrice: 15
   damage: 1

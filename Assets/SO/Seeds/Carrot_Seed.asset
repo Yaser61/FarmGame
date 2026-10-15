@@ -17,4 +17,5 @@ MonoBehaviour:
   isStackable: 1
   maxStack: 16
   itemShineMaterial: {fileID: 2100000, guid: a173aad8c24132d4b86b03c419f391af, type: 2}
+  itemPrice: 2
   plant: {fileID: 11400000, guid: 6b65c6be5dce2c346b95e1af34c72ecf, type: 2}

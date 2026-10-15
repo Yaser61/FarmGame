@@ -14,12 +14,14 @@ public class EnemyAI : MonoBehaviour, IA_Hitable
     private Material defaultMaterial;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private BoxCollider2D boxCollider2D;
     private int currentHealth;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     void Start()
@@ -106,6 +108,7 @@ public class EnemyAI : MonoBehaviour, IA_Hitable
         {
             Debug.Log("Slime bayıldı");
             animator.SetTrigger("dead");
+            boxCollider2D.enabled = false;
             currentState = EnemyState.DeadState;
         }
         else

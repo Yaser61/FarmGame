@@ -101,12 +101,19 @@ public class InventoryManager : MonoBehaviour
             else Debug.Log("Boş slot yok");
         }
     }
-    public void RemoveItem(Item item, int amount)
+    public bool RemoveItem(Item item, int amount)
     {
         InventorySlot slot = GetItemSlot(item);
         if (slot != null)
+        {
             slot.SetItemCount(-amount);
-        else Debug.Log("Bu item sende yok: " + item.itemName);
+            return true;
+        }
+        else
+        {
+            Debug.Log("Bu item sende yok: " + item.itemName);
+            return false;
+        }
     }
     public InventorySlot GetStackableSlot(Item item)
     {
