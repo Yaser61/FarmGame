@@ -49,6 +49,7 @@ public class MarketManager : MonoBehaviour
             sellPanel.SetActive(true);
         }
         );
+        goldText.text = playerGold.ToString();
     }
 
     public void MarketRequest(Item item, int amount)

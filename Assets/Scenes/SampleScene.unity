@@ -997,16 +997,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322784963}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 555429390}
+  m_Father: {fileID: 1095210093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 743, y: 420.4467}
+  m_AnchoredPosition: {x: -35.200073, y: 3.8432312}
   m_SizeDelta: {x: 200, y: 74.467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &322784965
@@ -1781,8 +1781,6 @@ RectTransform:
   - {fileID: 1879639390}
   - {fileID: 1841207970}
   - {fileID: 1150527752}
-  - {fileID: 322784964}
-  - {fileID: 1083397120}
   - {fileID: 1095210093}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3442,16 +3440,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083397119}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 555429390}
+  m_Father: {fileID: 1095210093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 889, y: 419}
+  m_AnchoredPosition: {x: 110.79993, y: 2.3965454}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1083397121
@@ -3579,7 +3577,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 322784964}
+  - {fileID: 1083397120}
   m_Father: {fileID: 555429390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -5910,6 +5910,7 @@ MonoBehaviour:
   buyPanel: {fileID: 120433354}
   buyItems:
   - {fileID: 11400000, guid: c1d3ac54b9f612b41a9e2550b0fb5570, type: 2}
+  - {fileID: 11400000, guid: da1a8a9f13c41124bbe052eac165fded, type: 2}
   - {fileID: 11400000, guid: f9be145d75aa91143bd68689db31b529, type: 2}
   sellContent: {fileID: 1943757857}
   sellPanel: {fileID: 188622156}
@@ -5919,7 +5920,8 @@ MonoBehaviour:
   marketSlotPrefab: {fileID: 5769032277508295707, guid: 33b2c2aaa39110d41b4bac0da8caa143, type: 3}
   buyButton: {fileID: 1410957561}
   sellButton: {fileID: 670311305}
-  playerMoney: 0
+  goldText: {fileID: 322784965}
+  playerGold: 50
 --- !u!4 &1815011237
 Transform:
   m_ObjectHideFlags: 0
